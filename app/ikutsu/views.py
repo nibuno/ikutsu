@@ -29,6 +29,7 @@ class IndexView(View):
         return render(request, 'index.html', {'form': form, 'age': age})
 
 
+# FIXME: この関数はviews.pyに書くべきではない
 def calc_age(birth_date_year: int, birth_date_month: int, birth_date_day: int) -> int:
     """年齢を計算する"""
 
