@@ -31,7 +31,14 @@ class IndexView(View):
 
 # FIXME: この関数はviews.pyに書くべきではない
 def calc_age(birth_date_year: int, birth_date_month: int, birth_date_day: int) -> int:
-    """年齢を計算する"""
+    """年齢を計算する
+
+    基本の計算ロジックは以下の通り
+    1. 今日の日付を取得
+    2. 誕生日を取得
+    3. 今日の年から誕生日の年を引く
+    4. 誕生日がまだ来ていない場合、年齢を1つ減らす
+    """
 
     today = date.today()
 
